@@ -8,11 +8,11 @@
         <th>Launch Date</th>
     </tr>
     <tr *ngFor = "let unit of satellites">
-        <th>{{ unit.name }}</th>
-        <th>{{ unit.type }}</th>
-        <th>{{ unit.launchDate }}</th>
-        <th>{{ unit.orbitType }}</th>
-        <th>{{ unit.operational }}</th>
-        
+        <td>{{ unit.name }}</td>
+        <td [class.warning] = unit.shouldShowWarning()
+        >{{ unit.type }}</td>
+        <td>{{ unit.launchDate }}</td>
+        <td>{{ unit.orbitType }}</td>
+        <td>{{ unit.operational }}</td>
     </tr>
 </table>
